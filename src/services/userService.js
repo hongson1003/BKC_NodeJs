@@ -140,7 +140,8 @@ let editUser = async (data) => {
         }
 }
 
-let getAllCodeService = async (type) => {
+let getAllCodeService = async (key) => {
+    let type = key.toUpperCase();
     try {
         if (!type) {
             return {
@@ -149,7 +150,7 @@ let getAllCodeService = async (type) => {
             }
         } else {
             let data = await db.Allcode.findAll({
-                raw: false,
+                raw: true,
                 where: {
                     type: type
                 }

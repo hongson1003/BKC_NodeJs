@@ -101,6 +101,7 @@ let getAllCode = async (req, res) => {
         let data = await userService.getAllCodeService(type);
         if (data)
             return res.status(200).json({
+                message: 'Get all code success',
                 errCode: 0,
                 data: data,
             });
